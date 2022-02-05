@@ -1,0 +1,12 @@
+[
+    {"id": "1", "name": "Kit Generador Solar Volta Box - Negro", "description": "Lorem Ipsum", "price": "370000",  "category": "kits", "img": "1" },
+    {"id": "2", "name": "Kit Generador Solar Volta Box - Negro", "description": "Lorem Ipsum", "price": "370000",  "category": "kits", "img": "2" },
+    {"id": "3", "name": "Kit Generador Solar Volta Box - Negro", "description": "Lorem Ipsum", "price": "370000",  "category": "kits", "img": "3" },
+    {"id": "4", "name": "Panel Solar 10w", "description": "Lorem Ipsum", "price": "70000",  "category": "paneles", "img": "4" },
+    {"id": "5", "name": "Panel Solar 20w", "description": "Lorem Ipsum", "price": "10000",  "category": "paneles", "img": "5" },
+    {"id": "6", "name": "Panel Solar 40w", "description": "Lorem Ipsum", "price": "150000",  "category": "paneles", "img": "6" },
+    {"id": "7", "name": "Panels Solar 60w", "description": "Lorem Ipsum", "price": "200000",  "category": "paneles", "img": "7" },
+    {"id": "8", "name": "Kit Generador Solar Volta Box - Negro", "description": "Lorem Ipsum", "price": "370000",  "category": "baterias", "img": "8" },
+    {"id": "9", "name": "Kit Generador Solar Volta Box - Negro", "description": "Lorem Ipsum", "price": "370000",  "category": "baterias", "img": "9" },
+    {"id": "10", "name": "Kit Generador Solar Volta Box - Negro", "description": "Lorem Ipsum", "price": "370000",  "category": "baterias", "img": "10" }
+]
