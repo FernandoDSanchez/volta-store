@@ -1,14 +1,28 @@
 import {GlobalContext} from "../App"
-import {useContext} from "react"
+import {useContext,useEffect,useState} from "react"
 
 export const ItemCounter = (props) => {
-    const {id} = props
-    const [items,increase,decrease,state] = useContext(GlobalContext)
+    const {id, price} = props
+    const [items,increase,decrease,state, sumTotal, setSumTotal] = useContext(GlobalContext)
+    const {cart} = state
+    const [qtyPrint, setQtyPrint] = useState(0) 
+    const [total, setTotal] = useState(0)
+    useEffect(()=>{
+        setQtyPrint(cart.filter(item => item.id === id).map(item => item.qty))
+    },[state,increase])
+    useEffect(()=>{
+        setTotal(price * qtyPrint)
+    },[qtyPrint])
+    useEffect(()=>{
+        setSumTotal(sumTotal + total)
+    },[total])
+    
     return(
         <div>
             <button onClick={()=> increase(id)}>mas</button>
-            <p>0</p>
+            <p>{qtyPrint}</p>
             <button onClick={()=> decrease(id)}>menos</button>
+            <h1>Total: {total}</h1>
         </div>
     )
 }
