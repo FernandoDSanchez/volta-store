@@ -11,9 +11,9 @@ import {
 } from "react-router-dom";
 
 import { Home } from "./pages/Home/Home";
-import { Category } from "./pages/Category";
-import { Item } from "./pages/Item";
-import { Menu } from "./components/NavBar/Menu";
+import { Category } from "./pages/Category/Category";
+import { Item } from "./pages/Item/Item";
+import { Menu } from "./components/NavBar/Menu/Menu";
 export const GlobalContext = createContext()
 
 export function App()  { 

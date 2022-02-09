@@ -1,4 +1,4 @@
-import {GlobalContext} from "../App"
+import {GlobalContext} from "../../App"
 import {useContext, useState, useEffect} from "react"
 
 export const FormCheckOut = () => {
@@ -15,7 +15,7 @@ export const FormCheckOut = () => {
     const messageGenerator = () => {
         let txt = cartList.cart.map(item => item.map(item => item.name));
         txt = txt.toString().split(",").join("%0a");
-        txt = "Hola soy "+ name + "%0aHe comprado:%0a" + txt + "%0aDireccion: " + address + "%0aTotal: " + sumTotal;
+        txt = "Hola soy "+ name + "%0aHe comprado:%0a" + txt + "%0aDireccion: " + address + "%0aTelefono: " + phone + "%0aTotal: " + sumTotal;
         txt = txt.split(" ").join("%20")
         return txt
     }

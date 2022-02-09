@@ -1,6 +1,6 @@
 import {useContext} from 'react'
-import {ProductDetail} from "./ProductDetail"
-import {GlobalContext} from "../App"
+import {ProductDetail} from "../ProductDetail/ProductDetail"
+import {GlobalContext} from "../../App"
 import { useParams } from 'react-router-dom'
 
 export const ProductList = () => { 

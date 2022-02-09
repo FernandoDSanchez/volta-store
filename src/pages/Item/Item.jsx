@@ -1,7 +1,7 @@
-import { ProductDetail } from "../components/ProductDetail"
+import { ProductDetail } from "../../components/ProductDetail/ProductDetail"
 import {useParams} from "react-router-dom"
 import {useContext} from "react"
-import { GlobalContext } from "../App"
+import { GlobalContext } from "../../App"
 export const Item = () => {
     const {itemId} = useParams()
     const [items, increase, decrease,state, itemsInCart, setItemsInCart] = useContext(GlobalContext)

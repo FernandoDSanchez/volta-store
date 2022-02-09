@@ -1,0 +1,70 @@
+.menuContainer {
+    height: 100%;
+    background-color: #FFF7EB;
+    position: fixed;
+    top: 0;
+    width: 50%;
+    z-index: 50;
+    left: 0;
+}
+.menuButton {
+    position: relative;
+    z-index: 100;
+}
+.menuButton:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.menuButton button {
+    background-color: transparent;
+    border-color: transparent;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+}
+.menuList {
+    padding-top: 80px;
+    padding-left: 50px;
+}
+.menuList li {
+    color: #282741;
+    font-size: 4.8rem;
+    list-style-type: none;
+}
+.listHover:hover {
+    transform: translate(40px);
+}
+.iconsContainer{
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 40vw;
+    justify-content: space-between;
+}
+.iconsContainerClose{
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 40vw;
+    justify-content:flex-start;
+}
+.logoContainer {
+    position: relative;
+    z-index: 150;
+}
+.burgerIcon{
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    .menuContainer {
+        width: 100%;
+    }
+    .iconsContainer{
+        width: 100vw;
+    }
+}

@@ -1,0 +1,12 @@
+.addButton {
+    background-color: #FFBE53;
+    width: 149px;
+    height: 33px;
+    border-style: none;
+    font-size: 1.2rem;
+}
+
+.addButton:hover {
+    opacity:  0.8;
+    cursor: pointer;
+}

@@ -1,4 +1,4 @@
-import {GlobalContext} from "../App"
+import {GlobalContext} from "../../App"
 import {useContext,useEffect,useState} from "react"
 
 export const ItemCounter = (props) => {
