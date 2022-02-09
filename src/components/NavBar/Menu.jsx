@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom"
+import { Logo } from "../../assets/img/Logo"
 export const Menu = () => {
     return (
         <div>
-            <button></button>
             <Link to="/">
                     <div>
-                        <img src={require(`../assets/img/logo.svg`)} alt="Logo Volta" />
+                        <Logo/>
                     </div>
             </Link>
             <ul>

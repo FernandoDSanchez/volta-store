@@ -4,7 +4,7 @@ import {GlobalContext} from "../App"
 import { useParams } from 'react-router-dom'
 
 export const ProductList = () => { 
-    const [items,increase,decrease,state] = useContext(GlobalContext)
+    const [items, increase, decrease,state, itemsInCart, setItemsInCart] = useContext(GlobalContext)
     let {category} = useParams();
     const filtered = items.filter(item => item.category === category)
             return (

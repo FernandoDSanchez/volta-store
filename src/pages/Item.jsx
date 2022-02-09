@@ -4,7 +4,7 @@ import {useContext} from "react"
 import { GlobalContext } from "../App"
 export const Item = () => {
     const {itemId} = useParams()
-    const [items] = useContext(GlobalContext)
+    const [items, increase, decrease,state, itemsInCart, setItemsInCart] = useContext(GlobalContext)
 
     const itemDetailed = items.filter(item => item.id === itemId)
     return (

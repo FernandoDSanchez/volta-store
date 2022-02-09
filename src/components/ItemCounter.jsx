@@ -3,7 +3,7 @@ import {useContext,useEffect,useState} from "react"
 
 export const ItemCounter = (props) => {
     const {id, price} = props
-    const [items,increase,decrease,state, sumTotal, setSumTotal] = useContext(GlobalContext)
+    const [items, increase, decrease,state, itemsInCart, setItemsInCart] = useContext(GlobalContext)
     const {cart} = state
     const [qtyPrint, setQtyPrint] = useState(0) 
     const [total, setTotal] = useState(0)
@@ -13,16 +13,13 @@ export const ItemCounter = (props) => {
     useEffect(()=>{
         setTotal(price * qtyPrint)
     },[qtyPrint])
-    useEffect(()=>{
-        setSumTotal(sumTotal + total)
-    },[total])
-    
     return(
         <div>
-            <button onClick={()=> increase(id)}>mas</button>
+            <button onClick={()=> `${increase(id)}`}>mas</button>
             <p>{qtyPrint}</p>
             <button onClick={()=> decrease(id)}>menos</button>
             <h1>Total: {total}</h1>
+            
         </div>
     )
 }

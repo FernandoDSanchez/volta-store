@@ -1,12 +1,12 @@
 [
-    {"id": "1", "name": "Kit Generador Solar Volta Box - Negro", "description": "Lorem Ipsum", "price": 370000,  "category": "kits", "img": "1" },
-    {"id": "2", "name": "Kit Generador Solar Volta Box - Negro", "description": "Lorem Ipsum", "price": 370000,  "category": "kits", "img": "2" },
-    {"id": "3", "name": "Kit Generador Solar Volta Box - Negro", "description": "Lorem Ipsum", "price": 370000,  "category": "kits", "img": "3" },
-    {"id": "4", "name": "Panel Solar 10w", "description": "Lorem Ipsum", "price": 70000,  "category": "paneles", "img": "4" },
-    {"id": "5", "name": "Panel Solar 20w", "description": "Lorem Ipsum", "price": 10000,  "category": "paneles", "img": "5" },
-    {"id": "6", "name": "Panel Solar 40w", "description": "Lorem Ipsum", "price": 150000,  "category": "paneles", "img": "6" },
-    {"id": "7", "name": "Panels Solar 60w", "description": "Lorem Ipsum", "price": 200000,  "category": "paneles", "img": "7" },
-    {"id": "8", "name": "Kit Generador Solar Volta Box - Negro", "description": "Lorem Ipsum", "price": 370000,  "category": "baterias", "img": "8" },
-    {"id": "9", "name": "Kit Generador Solar Volta Box - Negro", "description": "Lorem Ipsum", "price": 370000,  "category": "baterias", "img": "9" },
-    {"id": "10", "name": "Kit Generador Solar Volta Box - Negro", "description": "Lorem Ipsum", "price": 370000,  "category": "baterias", "img": "10" }
+    {"id": "1", "name": "Kit Nevera 24H", "description": " 2 Panel Solar 340W 24V Policristalino, 2 Batería AGM 12V 150Ah, ciclo profundo, inversor onda pura de 1000W 24VDC, controlador de carga de 40A, con display LCD ", "price": 5550000,  "category": "kits", "img": "1" },
+    {"id": "2", "name": "kit TV, ventilador", "description": "Panel Solar 150 W 12V Policristalino, Batería AGM 12V 55Ah, ciclo profundo, inversor onda pura de 600W 24VDC, controlador de carga de 20A, con display LCD", "price": 1880000,  "category": "kits", "img": "2" },
+    {"id": "3", "name": "kit TV-Iluminancion", "description": "Panel Solar 60 W 12V Policristalino, Batería AGM 12V 12Ah, ciclo profundo, Modulo Inversor/controlador Voltabox 200W", "price": 720000,  "category": "kits", "img": "3" },
+    {"id": "4", "name": "kit equipos electrionicos 3 a 5 horas", "description": "Panel Solar 20 W 12V Policristalino, Batería AGM 12V 5Ah ciclo profundo, Modulo Inversor/controlador Voltabox 200W, Maletin Portatil Voltabox", "price": 370000,  "category": "kits", "img": "4" },
+    {"id": "5", "name": "Panel Solar 340W 24V Policristalino ", "description": "Voltaje màx. de salida:  38V, Corriente max. 8,8A, Eficiencia modular 17,5%, Dimensiones 99,20 x 196,5 x 4 cm", "price": 650000,  "category": "paneles", "img": "5" },
+    {"id": "6", "name": "Panel Solar 150W 24V Policristalino ", "description": "Voltaje màx. de salida:  26V, Corriente max. 4,8A, Eficiencia modular 17,5%, Dimensiones 148 x 67 x 3 cm", "price": 390000,  "category": "paneles", "img": "6" },
+    {"id": "7", "name": "Panel Solar 60W 24V Policristalino ", "description": "Voltaje màx. de salida:  19V, Corriente max. 3,2A, Eficiencia modular 17,5%, Dimensiones 66,50 x 68,6 x 3 cm", "price": 260000,  "category": "paneles", "img": "7" },
+    {"id": "8", "name": "Bateria AGM 12V - 155 Ah marca Mteck ", "description": "Dimesiones Largo: 485 mm Ancho: 172 mm Alto: 240 mm Ancho: 240 mm, Peso: 43 kg o 94.8 libras, Voltaje de carga flotante: 13,50 a 13,80 voltios (-15 mv / ° C), Carga máxima 45 amperios (A)", "price": 1450000,  "category": "baterias", "img": "8" },
+    {"id": "9", "name": "Bateria AGM 12V - 55 Ah marca Mteck ", "description": "Dimensiones (Largo x Ancho x Alto): (230 x 138 x 211) mm, Peso: 17,3 Kg, Voltaje de carga flotante: 13,50 a 13,80 voltios (-15 mv / ° C), Carga máxima 16,5 amperios (A)", "price": 650000,  "category": "baterias", "img": "9" },
+    {"id": "10", "name": "Bateria AGM 12V - 12 Ah marca Mteck ", "description": "Dimensiones (Largo x Ancho x Alto): (150 x 97 x 94) mm, Peso: 3,35 Kg, Voltaje de carga flotante: 13,50 a 13,80 voltios (-15 mv / ° C), Carga máxima 3,6 amperios (A)", "price": 150000,  "category": "baterias", "img": "10" }
 ]
