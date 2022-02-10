@@ -59,7 +59,9 @@
 .burgerIcon{
     left: 0;
 }
-
+.contactContainer h3{
+    font-size: 2rem;
+}
 @media (max-width: 768px) {
     .menuContainer {
         width: 100%;

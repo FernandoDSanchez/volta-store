@@ -1,6 +1,6 @@
 import {GlobalContext} from "../../App"
 import {useContext, useState, useEffect} from "react"
-
+import styles from "./FormCheckOut.module.css"
 export const FormCheckOut = () => {
     const [items, increase, decrease,state, itemsInCart, setItemsInCart,sumTotal] = useContext(GlobalContext)
     const [cartList, setCartList] = useState({cart:[]})
@@ -13,16 +13,16 @@ export const FormCheckOut = () => {
     },[state])
 
     const messageGenerator = () => {
-        let txt = cartList.cart.map(item => item.map(item => item.name));
+        let txt = cartList.cart.map(item => item.map(item => item.name + " x " + state.cart.filter(product => product.id === item.id).map(e => e.qty)));
         txt = txt.toString().split(",").join("%0a");
-        txt = "Hola soy "+ name + "%0aHe comprado:%0a" + txt + "%0aDireccion: " + address + "%0aTelefono: " + phone + "%0aTotal: " + sumTotal;
+        txt = "Hola soy "+ name + "%0aHe comprado:%0a" + txt + "%0aDireccion: " + address + "%0aTelefono: " + phone + "%0aTotal: " + sumTotal + "Pesos";
         txt = txt.split(" ").join("%20")
         return txt
     }
     let message = messageGenerator()
     const whatsappUrl =`https://api.whatsapp.com/send?phone=+573197511679&text=${message}`
     return (
-        <div >
+        <div className={styles.formContainer}>
             <input
             type="text"
             id="name"

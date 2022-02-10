@@ -5,8 +5,51 @@
     border-style: none;
     font-size: 1.2rem;
 }
-
 .addButton:hover {
     opacity:  0.8;
     cursor: pointer;
+}
+.productCard {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    max-width:800px;
+    max-height: 20em;
+    padding-bottom: 2.5em;
+    padding-top: 2.5em;
+    border-bottom:  solid 1px hsl(245, 25%, 20%, .1) ;
+}
+
+.productCard:hover {
+    opacity: 0.8;
+}
+.productCard h1 {
+    font-size: 2.4rem;
+}
+
+.productCard p {
+    padding: right;
+    font-size: 1.6rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.productInfo {
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.productInfo h3 {
+    font-size: 1.2rem
+}
+
+.imgProduct img {
+    max-width: 200px;
+    height: auto;
+    max-height: 100%;
 }

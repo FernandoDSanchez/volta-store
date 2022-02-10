@@ -7,7 +7,11 @@ export const CartButton = (props) => {
     const [items, increase, decrease,state, itemsInCart, setItemsInCart] = useContext(GlobalContext)
     const [itemsTotal, setItemsTotal] = useState()
     let style
+    
+    
     navStyle?style = styles.buttonDark: style = styles.buttonLight
+    
+    
     useEffect(() => {
         setItemsTotal(state.cart.length)
     }, [state]);

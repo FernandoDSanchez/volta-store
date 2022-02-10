@@ -5,16 +5,17 @@ import { VoltaBox } from "../../assets/img/VoltaBox"
 
 export const Home = () => {
     const size = styles.addButton
+    let navStyle = false
     return(
         <div className={styles.home}>
-            <div>
-                <NavBar/>
+            <div className={styles.navBar}>
+                <NavBar navStyle={navStyle}/>
             </div>
             <div className={styles.homeContainer}>
                 <div className={styles.imgContainer}><img src={require(`../../assets/img/volta-box.png`)} alt="Equipo Volta"/></div>
                 <div className={styles.itemHome}>
                     <VoltaBox className={styles.voltaBox}/>
-                    <div><p>Kit Generador Volta Box</p></div>
+                    <div><p>Kit Generador Solar Volta Box</p></div>
                     <p>$370.000</p>
                     <AddToCart id={"4"} size={size}/>
                 </div>

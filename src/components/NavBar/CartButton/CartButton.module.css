@@ -9,7 +9,8 @@
     width: 160px;
     height: 47px;
     padding: 15px;
-    z-index: 50;
+    position: relative;
+    z-index: 200;
 }
 .buttonDark {
     border-radius: 0;
@@ -22,13 +23,24 @@
     width: 160px;
     height: 47px;
     padding: 15px;
-    z-index: 50;
+    position: relative;
+    z-index: 200;
 }
-.button:hover {
+
+.buttonDark:hover {
     opacity: 0.8;
     cursor: pointer;
 }
-
+.buttonLight:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+.buttonDark p {
+    color:#FFF7EB;
+}
+.buttonLight p {
+    color:#282741;;
+}
 .cartIconContainer {
     align-self: center;
     position: relative;
@@ -62,5 +74,14 @@
     .buttonLight {
         width: 80px;
         height: auto;
+    }
+    .myCart {
+        display: none;
+    }
+    .buttonLight {
+        justify-content: center;
+    }
+    .buttonDark {
+        justify-content: center;
     }
 }

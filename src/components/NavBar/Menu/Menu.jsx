@@ -33,10 +33,9 @@ export const Menu = (props) => {
                     <li className={styles.listHover}>Paneles</li>
                 </Link>
                 <li>Contacto:
-                    <div>
-                        <h3>correo@gmai.com</h3>
-                        <h3>Tlf 000000000</h3>
-                        <h3>Whatsapp</h3>
+                    <div className={styles.contactContainer}>
+                        <h3>voltacolombia@gmail.com</h3>
+                        <h3>Tlf +57-3197511679</h3>
                     </div>
                 </li>
             </ul>

@@ -1,0 +1,6 @@
+.counterOn {
+    display: inline;
+}
+.counterOff { 
+    display: none;
+}

@@ -1,0 +1,17 @@
+.CheckOut {
+    background-color: #282741;
+    height: 100%;
+}
+.checkContainer {
+    display: flex;
+    flex-direction: row;
+}
+.form{
+    top: 0;
+    right: 0;
+    position: absolute;
+    background-color: #FFF7EB;
+    width: 30%;
+    height: 100%;
+    z-index: 300;
+}
