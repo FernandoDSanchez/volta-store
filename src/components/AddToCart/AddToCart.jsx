@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import {GlobalContext} from "../../App"
-import styles from "./AddToCart.module.css"
+
 
 export const AddToCart = (props) => {
     const {id, size} = props

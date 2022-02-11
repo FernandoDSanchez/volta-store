@@ -5,6 +5,7 @@
     padding-right: 30px;
     width: 100%;
     align-items: center;
+    box-sizing: border-box;
 }
 .products {
     display: flex;
@@ -31,9 +32,12 @@
     color: #282741;
 }
 .listCategory {
-    position: relative;
     border-right:  solid 1px hsl(245, 25%, 20%, .1) ;
     height: 100%;
+}
+.categoryContainer {
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
@@ -41,6 +45,14 @@
         display: flex;
         flex-direction: row;
         height: 5%;
+        padding-top: 5em;
+    }
+    .categoryTitle {
+        display: none;
+    }
+    .listCategory li {
+        font-size: 2rem;
+        
     }
     .listContainer {
         flex-direction: column;

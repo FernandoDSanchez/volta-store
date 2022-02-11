@@ -1,10 +1,12 @@
 import {GlobalContext} from "../../App"
 import {useContext,useEffect,useState} from "react"
 import styles from "./ItemCounter.module.css"
+import {BsPlusLg} from "react-icons/bs"
+import { FaMinus } from "react-icons/fa"
 
 export const ItemCounter = (props) => {
     const {id, price, counterOn} = props
-    const [items, increase, decrease,state, itemsInCart, setItemsInCart] = useContext(GlobalContext)
+    const [items, increase, decrease,state, itemsInCart, setItemsInCart,sumTotal] = useContext(GlobalContext)
     const {cart} = state
     const [qtyPrint, setQtyPrint] = useState(0) 
     const [total, setTotal] = useState(0)
@@ -19,11 +21,14 @@ export const ItemCounter = (props) => {
     },[qtyPrint])
     return(
         <div className={style}>
-            <button onClick={()=> `${increase(id)}`}>mas</button>
-            <p>{qtyPrint}</p>
-            <button onClick={()=> decrease(id)}>menos</button>
-            <h1>Total: {total}</h1>
-            
+            <div className={styles.totalCounter}>
+                <h1>Total: ${total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h1>
+                <div className={styles.counterContainer}>
+                    <button onClick={()=> `${increase(id)}`}><BsPlusLg/></button>
+                    <p>{qtyPrint}</p>
+                    <button onClick={()=> decrease(id)}><FaMinus/></button>
+                </div>
+            </div>
         </div>
     )
 }

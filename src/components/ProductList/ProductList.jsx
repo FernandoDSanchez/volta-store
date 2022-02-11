@@ -10,7 +10,7 @@ export const ProductList = ({counterOn}) => {
     let categoryTitle = category.charAt(0).toUpperCase() + category.slice(1);
     const filtered = items.filter(item => item.category === category)
             return (
-                    <div>
+                    <div className={styles.categoryContainer}>
                         <div className={styles.categoryTitle}>
                             <h1>{categoryTitle}</h1>
                         </div>

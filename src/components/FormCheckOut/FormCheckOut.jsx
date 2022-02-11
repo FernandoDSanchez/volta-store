@@ -44,10 +44,12 @@ export const FormCheckOut = () => {
             placeholder="Ingrese su Telefono"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}/>
-            <h3>Subtotal</h3>
-            <h3>Iva</h3>
-            <h3>Total</h3>
-            <a href={whatsappUrl}><button>pagar</button></a>
+            <div className={styles.totals}>
+                <h3>Subtotal</h3>
+                <h3>Iva</h3>
+                <h3>Total</h3>
+            </div>
+            <a href={whatsappUrl}><button className={styles.payButton}>Pagar con Wompi</button></a>
         </div>
     )
 }

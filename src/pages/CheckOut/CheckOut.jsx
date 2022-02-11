@@ -2,6 +2,7 @@ import {FormCheckOut} from "../../components/FormCheckOut/FormCheckOut"
 import { CartList } from "../../components/CartList/CartList"
 import { NavBar } from "../../components/NavBar/NavBar"
 import styles from "./CheckOut.module.css"
+
 export const CheckOut = () => {
     let navStyle = false
     let counterOn = true

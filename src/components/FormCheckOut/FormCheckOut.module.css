@@ -9,4 +9,16 @@
     background-color: transparent;
     border-style: none;
     border-bottom:  solid 1px hsl(245, 25%, 20%, .1);
+    width: 100%;
+    padding: 2em;
+}
+
+.payButton {
+    border-style: none;
+    background-color: #FFBE53;
+    padding: 2em;
+    cursor: pointer;
+}
+.payButton:hover {
+    opacity: 0.8;
 }

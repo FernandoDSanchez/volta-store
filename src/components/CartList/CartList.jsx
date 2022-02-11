@@ -1,8 +1,8 @@
 import {useContext} from 'react';
-import {ProductDetail} from "../ProductDetail/ProductDetail";
+import {CartDetail} from "../CartDetail/CartDetail";
 import {GlobalContext} from "../../App";
 import {useState,useEffect} from "react";
-
+import styles from "./CartList.module.css"
 export const CartList = ({counterOn}) => {
     const [items, increase, decrease,state, itemsInCart, setItemsInCart,sumTotal] = useContext(GlobalContext)
     const [cartList, setCartList] = useState({cart:[]})
@@ -14,13 +14,13 @@ export const CartList = ({counterOn}) => {
 
         return (
                     <div>
-                        <div>
+                        <div className={styles.cartList}>
                             {cartList.cart.map(cartItem => cartItem.map(({id, name, description,price, img, category }) =>
-                            <ProductDetail name={name} id={id} description={description}
+                            <CartDetail name={name} id={id}
                             price={price} category={category}img={img} key={id} counterOn={counterOn}/>
                             ))}
                         </div>
-                        <div><h1>Subtotal{sumTotal}</h1></div>
+                        <div className={styles.totalSum}><h1>Suma Total: ${sumTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h1></div>
                     </div>
                 )
 }

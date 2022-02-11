@@ -1,6 +1,28 @@
 .counterOn {
     display: inline;
+    height: 100%;
 }
 .counterOff { 
     display: none;
+}
+.counterContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.counterContainer button {
+    width: 24px;
+    height: 24px;
+    background-color: #FFF7EB;
+    border-style: none;
+}
+.counterContainer p {
+    color: #FFF7EB;
+}
+.totalCounter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
 }

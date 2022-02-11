@@ -16,10 +16,10 @@ export const cartReducer = (state,action) => {
         }
         case TYPES.REMOVE_ITEM:{
             let itemToDelete = state.cart.find(products => products.id === action.payload)
-            return itemToDelete > 0 ? {...state,
+            return itemToDelete.qty  > 1 ? {...state,
                 cart:state.cart.map((item) => 
                 item.id === action.payload
-                ?{...item,qty: item.qty - 1 }
+                ?{...item,qty: item.qty - 1, total: action.totalLoad }
                 : item)}:
                 {...state, cart: state.cart.filter((item) => item.id !== action.payload)}
         }
