@@ -11,6 +11,7 @@
     border-bottom:  solid 1px hsl(245, 25%, 20%, .1);
     width: 100%;
     padding: 2em;
+    font-size: 2.4rem;
 }
 
 .payButton {
@@ -18,6 +19,7 @@
     background-color: #FFBE53;
     padding: 2em;
     cursor: pointer;
+    font-size: 1.8rem;
 }
 .payButton:hover {
     opacity: 0.8;

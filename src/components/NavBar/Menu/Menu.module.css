@@ -69,4 +69,7 @@
     .iconsContainer{
         width: 100vw;
     }
+    .logoContainer svg {
+        width: 100%;
+    }
 }

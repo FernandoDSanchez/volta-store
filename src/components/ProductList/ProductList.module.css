@@ -31,10 +31,14 @@
     padding-right: 50px;
     color: #282741;
 }
+.listCategory li:hover {
+    transform: translate(40px);
+}
 .listCategory {
     border-right:  solid 1px hsl(245, 25%, 20%, .1) ;
     height: 100%;
 }
+
 .categoryContainer {
     max-width: 100%;
     box-sizing: border-box;

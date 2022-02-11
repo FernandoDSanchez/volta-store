@@ -64,6 +64,7 @@
 .myCart {
     margin-top: auto;
     font-size: 1.8rem;
+    font-family: 'Rokkitt', serif;
 }
 
 @media (max-width: 768px) {

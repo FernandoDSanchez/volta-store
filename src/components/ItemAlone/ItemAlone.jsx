@@ -24,7 +24,7 @@ export const ItemAlone = (props) => {
                                 <ItemCounter id={id} price={price} counterOn={counterOn}/>
                             </div>
                         </div>
-                        <div>
+                        <div className={styles.description}>
                             <Link to={linkTo}><p>{description}</p></Link>
                         </div>
                     </div>

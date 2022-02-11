@@ -1,6 +1,8 @@
 import {GlobalContext} from "../../App"
 import {useContext, useState, useEffect} from "react"
 import styles from "./FormCheckOut.module.css"
+import { Wompi } from "../Wompi/Wompi"
+
 export const FormCheckOut = () => {
     const [items, increase, decrease,state, itemsInCart, setItemsInCart,sumTotal] = useContext(GlobalContext)
     const [cartList, setCartList] = useState({cart:[]})
@@ -44,12 +46,14 @@ export const FormCheckOut = () => {
             placeholder="Ingrese su Telefono"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}/>
+
             <div className={styles.totals}>
                 <h3>Subtotal</h3>
                 <h3>Iva</h3>
                 <h3>Total</h3>
             </div>
             <a href={whatsappUrl}><button className={styles.payButton}>Pagar con Wompi</button></a>
+            
         </div>
     )
 }

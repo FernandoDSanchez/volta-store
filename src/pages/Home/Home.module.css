@@ -19,10 +19,10 @@
     flex-wrap: wrap;
     top: 0;
     position: absolute;
-
 }
 .itemHome p{
     font-size: 3.6rem;
+    font-family: 'Abel', sans-serif;
     color: #fff;
 }
 .itemHome {
@@ -31,12 +31,29 @@
     justify-content: center;
     align-items: center;
 }
+
 .imgContainer {
+    padding-top: 5em;
     display: flex;
     justify-content: center;
 }
+@keyframes float {
+	0% {
+		
+		transform: translatey(0px);
+	}
+	50% {
+		
+		transform: translatey(-20px);
+	}
+	100% {
+		
+		transform: translatey(0px);
+	}
+}
 .imgContainer img{
     max-height: 60vh;
+    animation: float 6s ease-in-out infinite;
 }
 .voltaBox {
     max-width: 80vw;
@@ -48,6 +65,7 @@
     height: 67px;
     border-style: none;
     font-size: 2rem;
+    font-family: 'Rokkitt', serif;
 }
 
 .addButton:hover {
@@ -61,6 +79,15 @@
     .imgContainer img{
         width: 80%;
         height: auto;
+    }
+    .homeContainer{
+        justify-content: space-evenly;
+    }
+    .itemHome svg {
+        width: 80%;
+    }
+    .addButton {
+        width: 80%;
     }
 }
 
