@@ -8,16 +8,16 @@ export const CartList = ({counterOn}) => {
     const [cartList, setCartList] = useState({cart:[]})
     
     useEffect(() => {
-        setCartList({cart: state.cart.map(item => items.filter(product => product.id === item.id))})
+        setCartList({cart: state.cart.map(item => items.filter(product => product._id === item._id))})
         setItemsInCart(state.cart.length)
     },[state])
 
         return (
                     <div>
                         <div className={styles.cartList}>
-                            {cartList.cart.map(cartItem => cartItem.map(({id, name, description,price, img, category }) =>
-                            <CartDetail name={name} id={id}
-                            price={price} category={category}img={img} key={id} counterOn={counterOn}/>
+                            {cartList.cart.map(cartItem => cartItem.map(({_id, name, description,price, image, category }) =>
+                            <CartDetail name={name} id={_id}
+                            price={price} category={category}img={image} key={_id} counterOn={counterOn}/>
                             ))}
                         </div>
                         <div className={styles.totalSum}><h1>Suma Total: ${sumTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h1></div>

@@ -1,7 +1,9 @@
 import itemJson from './itemsList.json'
+const PRODUCT_URL = "https://voltabackend.herokuapp.com/api/product"
 export const get = async () => {
-    const items = itemJson
-    return items
+    let response = await fetch(PRODUCT_URL)
+    let data = await response.json()
+    return data
 }
 
 

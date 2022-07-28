@@ -6,16 +6,16 @@ import { NavBar } from "../../components/NavBar/NavBar"
 export const Item = () => {
     const {itemId} = useParams()
     const [items, increase, decrease,state, itemsInCart, setItemsInCart] = useContext(GlobalContext);
-    const itemDetailed = items.filter(item => item.id === itemId);
+    const itemDetailed = items.filter(item => item._id === itemId);
     let navStyle = true;
     let counterOn = false;
     return (
         <div>
             <div>
                 <NavBar navStyle={navStyle}/>
-                {itemDetailed.map(({id, name, description,price, img, category }) =>
-                            <ItemAlone name={name} id={id} description={description}
-                            price={price} category={category}img={img} key={id}  counterOn={counterOn}/>
+                {itemDetailed.map(({_id, name, description,price, image, category }) =>
+                            <ItemAlone name={name} id={_id} description={description}
+                            price={price} category={category}img={image} key={_id}  counterOn={counterOn}/>
                             )}
             </div>
         </div>

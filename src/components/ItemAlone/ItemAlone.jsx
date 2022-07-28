@@ -2,6 +2,7 @@ import { ItemCounter } from "../ItemCounter/ItemCounter";
 import {Link} from "react-router-dom";
 import { AddToCart } from "../AddToCart/AddToCart";
 import styles from "./ItemAlone.module.css";
+import { Wompi } from "../Wompi/Wompi";
 export const ItemAlone = (props) => {
     const { name, description, price, img, category,id,counterOn} = props
     let linkTo = `/Item/${id}`
@@ -9,8 +10,9 @@ export const ItemAlone = (props) => {
     
     return (
         <div className={styles.productCard}>
+                <Wompi/>
                 <div className={styles.imgProduct}>
-                    <Link to={linkTo}><img src={require(`../../assets/img/${img}.png`)} alt="" width="100" height="100"/></Link>
+                    <Link to={linkTo}><img src={img} alt="" width="100" height="100"/></Link>
                 </div>
                 <div className={styles.productInfo}>
                     <div className={styles.infoContainer}>

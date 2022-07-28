@@ -32,6 +32,18 @@ export const Menu = (props) => {
                 <Link to="/Category/paneles">
                     <li className={styles.listHover}>Paneles</li>
                 </Link>
+                <Link to="/Category/controladores">
+                    <li className={styles.listHover}>Controladores</li>
+                </Link>
+                <Link to="/Category/inversores">
+                    <li className={styles.listHover}>Inversores</li>
+                </Link>
+                <Link to="/Category/accesorios">
+                    <li className={styles.listHover}>Accesorios</li>
+                </Link>
+                <Link to="/Category/luminarias">
+                    <li className={styles.listHover}>Luminarias</li>
+                </Link>
                 <li>Contacto:
                     <div className={styles.contactContainer}>
                         <h3>voltacolombia@gmail.com</h3>

@@ -10,7 +10,7 @@ export const CartDetail = (props) => {
     return (
         <div className={styles.productCard}>
                 <div className={styles.imgProduct}>
-                    <Link to={linkTo}><img src={require(`../../assets/img/${img}.png`)} alt="" width="100" height="100"/></Link>
+                    <Link to={linkTo}><img src={img} alt="" width="100" height="100"/></Link>
                 </div>
                 <div className={styles.productInfo}>
                     <div>

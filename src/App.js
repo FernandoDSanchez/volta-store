@@ -3,17 +3,16 @@ import { CheckOut } from "./pages/CheckOut/CheckOut";
 import {get} from './utils/get'
 import {cartReducer,cartInitializer} from './reducers/cartReducer'
 import {TYPES} from "./actions/cartActions"
-
+import { firebaseMethods } from "./utils/firebase";
 import {
     BrowserRouter,
     Routes,
-    Route,Link
+    Route
 } from "react-router-dom";
 
 import { Home } from "./pages/Home/Home";
 import { Category } from "./pages/Category/Category";
 import { Item } from "./pages/Item/Item";
-import { Menu } from "./components/NavBar/Menu/Menu";
 export const GlobalContext = createContext()
 
 export function App()  { 
@@ -24,11 +23,14 @@ export function App()  {
 
     
     useEffect(() => {
-        get().then((data) => setItems(data))
+        const connection = new firebaseMethods()
+        connection.getProducts().then((data) => {
+            console.log(data);
+            setItems(data)})
         setItemsInCart(state.cart.length)
     },[state])
     useEffect(() => {
-        setSumTotal(items.map((item) => item.price *(state.cart.filter(e => e.id === item.id).map(i=>i.qty))).reduce((prev, curr) => prev + curr, 0))
+        setSumTotal(items.map((item) => item.price *(state.cart.filter(e => e._id === item._id).map(i=>i.qty))).reduce((prev, curr) => prev + curr, 0))
     },[state])
     const increase = (id) => {
         dispatch({type:TYPES.ADD_ITEM, payload: id})

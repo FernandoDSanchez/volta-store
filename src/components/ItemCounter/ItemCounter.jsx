@@ -14,11 +14,11 @@ export const ItemCounter = (props) => {
 
     counterOn ? style = styles.counterOn: style = styles.counterOff;
     useEffect(()=>{
-        setQtyPrint(cart.filter(item => item.id === id).map(item => item.qty))
-    },[state,increase])
+        setQtyPrint(cart.filter(item => item._id === id).map(item => item.qty))
+    },[state, increase, cart, id])
     useEffect(()=>{
         setTotal(price * qtyPrint)
-    },[qtyPrint])
+    },[price, qtyPrint])
     return(
         <div className={style}>
             <div className={styles.totalCounter}>
