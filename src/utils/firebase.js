@@ -2,6 +2,10 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs, doc, setDoc } from 'firebase/firestore/lite';
 import "firebase/firestore"
+import { getFunctions, httpsCallable } from "firebase/functions";
+
+
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -18,18 +22,19 @@ const firebaseConfig = {
 };
 
 
+
 export class firebaseMethods {
   
   constructor() {
       this.app = initializeApp(firebaseConfig);
       this.db = getFirestore(this.app);
+      this.functions = getFunctions(this.app);
   }
   getProducts = async () => {
     const productCol = collection(this.db, 'products');
     const productSnapshot = await getDocs(productCol);
     const productList = productSnapshot.docs.map(doc => doc.data());
-    return productList;
-  }
+    return productList;}
 
   addOrder = async (order) => {
     const newProductRef = doc(collection(this.db, "orders"));
@@ -38,16 +43,19 @@ export class firebaseMethods {
     .then((res) => {
       console.log("Document successfully written!");
       console.log(res);
-    }) 
+    })}
+
+  createToken = async (data) => {
+    const createToken= httpsCallable(this.functions, 'createToken');
+    await createToken(data)
+    .then((result) => {
+      console.log(result);
+    });}
+
+  charge = async (data) => {
+  const createCharge= httpsCallable(this.functions, 'createCharge');
+  await createCharge(data)
+  .then((result) => {
+    console.log(result);
+  });}
 }
-}
-
-
-// Initialize Firebase
-
-
-// export async function getProducts() {
-//   const productCol = collection(db, 'products');
-//   const productSnapshot = await getDocs(productCol);
-//   const cityList = productSnapshot.docs.map(doc => doc.data());
-//   return cityList

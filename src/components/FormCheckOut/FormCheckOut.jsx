@@ -2,13 +2,28 @@ import {GlobalContext} from "../../App"
 import {useContext, useState, useEffect} from "react"
 import styles from "./FormCheckOut.module.css"
 import { firebaseMethods } from "../../utils/firebase"
-
+import { CheckoutInputs } from "../CheckoutInputs/CheckoutInputs"
 export const FormCheckOut = () => {
     const [items, increase, decrease,state, itemsInCart, setItemsInCart,sumTotal] = useContext(GlobalContext)
     const [cartList, setCartList] = useState({cart:[]})
     const [order , setOrder] = useState({cart: state.cart, total: sumTotal})
     const connection = new firebaseMethods()
-
+    
+    const creditInfo = {
+        "value":"1000", //Obligatorio
+        "doc_type":"CC", //Obligatorio
+        "doc_number":"1233693829", //Obligatorio
+        "name":"Fernando", //Obligatorio
+        "last_name":"Sanchez", //Obligatorio
+        "email":"fernandodendara@gmail.com", //Obligatorio
+        "cell_phone":"3010000001", //Obligatorio
+        "phone":"3005234321", //Obligatorio
+        "card[number]": "5306917248598307",
+        "card[exp_year]": "2025",
+        "card[exp_month]": "12",
+        "card[cvc]": "361",
+        "currency": "COP",
+    };
     const handleChange = (e) => {
         e.preventDefault()
         setOrder({...order, [e.target.name]: e.target.value})
@@ -16,6 +31,10 @@ export const FormCheckOut = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         console.log(order)
+        await connection.charge(creditInfo)
+        .then((res) => {
+            console.log(res)
+        })
         await connection.addOrder(order)
         .then((res) => {
             console.log(res)
@@ -38,38 +57,10 @@ export const FormCheckOut = () => {
     }
     let message = messageGenerator()
     const whatsappUrl =`https://api.whatsapp.com/send?phone=+573197511679&text=${message}`
+    
     return (
         <div className={styles.formContainer}>
-            <form action="" onSubmit={(e) => handleSubmit(e)}>
-                <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Ingrese su Nombre"
-                value={order.name}
-                onChange={(e) => handleChange(e)}/>
-                <input
-                type="text"
-                id="address"
-                name="address"
-                placeholder="Ingrese su Direccón"
-                value={order.address}
-                onChange={(e) => handleChange(e)}/>
-                <input
-                type="text"
-                id="address"
-                name="phone"
-                placeholder="Ingrese su Telefono"
-                value={order.phone}
-                onChange={(e) => handleChange(e)}/>
-                <div className={styles.totals}>
-                    <h3>Subtotal</h3>
-                    <h3>Iva</h3>
-                    <h3>Total</h3>
-                </div>
-                <button className={styles.payButton} type='submit' >Ordenar</button>
-            </form>
-            
+            <CheckoutInputs/>
         </div>
     )
 }
