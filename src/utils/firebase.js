@@ -47,15 +47,27 @@ export class firebaseMethods {
 
   createToken = async (data) => {
     const createToken= httpsCallable(this.functions, 'createToken');
-    await createToken(data)
+    return await createToken(data)
     .then((result) => {
       console.log(result);
-    });}
+      return result;
+    });
+  }
 
-  charge = async (data) => {
+  createCustomer = async (data) => {
+    const createCustomer = httpsCallable(this.functions, 'createCustomer');
+    return await createCustomer(data)
+    .then((result) => {
+      console.log(result);
+      return result;
+    });
+  }
+
+  createCharge = async (data) => {
   const createCharge= httpsCallable(this.functions, 'createCharge');
   await createCharge(data)
   .then((result) => {
     console.log(result);
+    return result;
   });}
 }

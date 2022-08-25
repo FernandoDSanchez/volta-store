@@ -4,10 +4,10 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
 }
 .navBar {
-    justify-self:  start;
+    justify-self:  flex-start;
 }
 .homeContainer {
     display: flex;

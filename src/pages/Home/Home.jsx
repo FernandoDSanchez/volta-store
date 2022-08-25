@@ -16,8 +16,8 @@ export const Home = () => {
                 <div className={styles.itemHome}>
                     <VoltaBox className={styles.voltaBox}/>
                     <div><p>Kit Generador Solar Volta Box</p></div>
-                    <p>$370.000</p>
-                    <AddToCart id={"4"} size={size}/>
+                    <p>$475.000</p>
+                    <AddToCart id={"sMzEYsc6GneFFVJ5wR73"} size={size}/>
                 </div>
             </div>
         </div>

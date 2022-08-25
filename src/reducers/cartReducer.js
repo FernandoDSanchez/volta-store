@@ -3,7 +3,6 @@ export const cartInitializer = {
     cart: []
 }
 export const cartReducer = (state,action) => {
-    console.log(action)
     switch (action.type) {
         case TYPES.ADD_ITEM:{
             let newItem = state.cart.find(products => products._id === action.payload)

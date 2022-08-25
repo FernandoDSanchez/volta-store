@@ -8,40 +8,40 @@ export const Menu = (props) => {
     const [showMenu, setShowMenu] = useState(false)
     const [iconsColor, setIconsColor] = useState("FFF7EB")
     const [iconsMenu, setIconsMenu] = useState("FFF7EB")
-    const dark = "#282741"
-    const light = "#FFF7EB"
-    const open = styles.iconsContainer
-    const close = styles.iconsContainerClose
+    
+    
     let menu
     useEffect(() => {
+        const open = styles.iconsContainer
+        const close = styles.iconsContainerClose
+        const dark = "#282741"
+        const light = "#FFF7EB"
         showMenu?setIconsColor(dark):setIconsColor(light)
-    },[showMenu])
-    useEffect(() => {
         showMenu?setIconsMenu(open):setIconsMenu(close)
     },[showMenu])
     if (showMenu){
         menu = 
         <div className={styles.menuContainer}>
             <ul className={styles.menuList}>
-                <Link to="/Category/baterias">
-                    <li className={styles.listHover}>Baterias</li>
+                <Link to="/Category/baterias" onClick={()=> setShowMenu(!showMenu)}>
+                    <li className={styles.listHover} >Baterias</li>
                 </Link>
-                <Link to="/Category/kits">
+                <Link to="/Category/kits" onClick={()=> setShowMenu(!showMenu)}>
                     <li className={styles.listHover}>Kits</li>
                 </Link>
-                <Link to="/Category/paneles">
+                <Link to="/Category/paneles" onClick={()=> setShowMenu(!showMenu)}>
                     <li className={styles.listHover}>Paneles</li>
                 </Link>
-                <Link to="/Category/controladores">
+                <Link to="/Category/controladores" onClick={()=> setShowMenu(!showMenu)}>
                     <li className={styles.listHover}>Controladores</li>
                 </Link>
-                <Link to="/Category/inversores">
+                <Link to="/Category/inversores" onClick={()=> setShowMenu(!showMenu)}>
                     <li className={styles.listHover}>Inversores</li>
                 </Link>
-                <Link to="/Category/accesorios">
+                <Link to="/Category/accesorios" onClick={()=> setShowMenu(!showMenu)}>
                     <li className={styles.listHover}>Accesorios</li>
                 </Link>
-                <Link to="/Category/luminarias">
+                <Link to="/Category/luminarias" onClick={()=> setShowMenu(!showMenu)}>
                     <li className={styles.listHover}>Luminarias</li>
                 </Link>
                 <li>Contacto:

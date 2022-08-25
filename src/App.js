@@ -1,6 +1,5 @@
 import React, { useState, useEffect,useReducer, createContext } from "react";
 import { CheckOut } from "./pages/CheckOut/CheckOut";
-import {get} from './utils/get'
 import {cartReducer,cartInitializer} from './reducers/cartReducer'
 import {TYPES} from "./actions/cartActions"
 import { firebaseMethods } from "./utils/firebase";
@@ -25,12 +24,12 @@ export function App()  {
     useEffect(() => {
         const connection = new firebaseMethods()
         connection.getProducts().then((data) => {
-            console.log(data);
             setItems(data)})
         setItemsInCart(state.cart.length)
     },[state])
     useEffect(() => {
         setSumTotal(items.map((item) => item.price *(state.cart.filter(e => e._id === item._id).map(i=>i.qty))).reduce((prev, curr) => prev + curr, 0))
+         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[state])
     const increase = (id) => {
         dispatch({type:TYPES.ADD_ITEM, payload: id})

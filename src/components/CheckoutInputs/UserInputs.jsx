@@ -1,10 +1,29 @@
 import { Formik, Form, Field } from 'formik';
 import { UserSchema } from "../../utils/CheckoutSchemas"
 import { firebaseMethods } from "../../utils/firebase"
-
-export const UserInputs = () => {
-
+import { useContext,useEffect,useState } from 'react';
+import {GlobalContext} from "../../App";
+import axios from 'axios';
+import {Spinner} from "../../assets/img/Spinner"
+export const UserInputs = ({setIsUser, cardToken, setIsBilling}) => {
+    const [, , , , , ,sumTotal] = useContext(GlobalContext)
     const connection = new firebaseMethods();
+    const [chargingPayment, setChargingPayment] = useState(false);
+
+    const [ip, setIP] = useState('');
+
+  //creating function to load ip address from the API
+  const getData = async () => {
+    const res = await axios.get('https://geolocation-db.com/json/')
+    console.log(res.data);
+    setIP(res.data.IPv4)
+  }
+  
+  useEffect( () => {
+    //passing getData method to the lifecycle method
+    getData()
+
+  }, [])
 
     return (<Formik
         initialValues={{
@@ -16,12 +35,26 @@ export const UserInputs = () => {
         cell_phone: '',
         city: '',
         address: '',
+        currency: 'COP',
+        ip: ip,
         }}
         validationSchema={UserSchema}
         onSubmit={async (values) => {
+            setChargingPayment(true)
+            values.token_card = cardToken;
+            values.default = true;
             console.log(values)
-        await connection.charge(values)
+        await connection.createCustomer(values)
             .then((res) => {
+                values.value = sumTotal;
+                values.customer_id = res.data.data.customerId;
+                connection.createCharge(values)
+                .then((res) => {
+                    console.log(res);
+                    setIsUser(false);
+                    setIsBilling(true);
+                    setChargingPayment(false)
+                })
                 console.log(res)
             })
         console.log(values);
@@ -67,7 +100,7 @@ export const UserInputs = () => {
             {errors.address && touched.address ? (
                 <div>{errors.address}</div>
             ) : null}
-            <button type="submit">Submit</button>
+            <button className={"btn btn-blue btn-blue:hover"} type="submit">{chargingPayment?<><Spinner /><span>Procesando</span></>:<span>Pagar</span>}</button>
         </Form>
     )}
     </Formik>)

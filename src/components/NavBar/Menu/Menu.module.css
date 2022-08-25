@@ -34,7 +34,7 @@
     list-style-type: none;
 }
 .listHover:hover {
-    transform: translate(40px);
+    opacity: 0.5;
 }
 .iconsContainer{
     z-index: 100;

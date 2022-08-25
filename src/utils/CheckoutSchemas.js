@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 import "yup-phone";
-
+import valid from 'card-validator'; //import statement
 
 
 export const UserSchema = Yup.object().shape({
@@ -26,6 +26,9 @@ export const UserSchema = Yup.object().shape({
 
 export const CCSchema = Yup.object().shape({
     card_number: Yup.string()
+        .test('test-number', // this is used internally by yup
+        'Credit Card number is invalid', //validation message
+        value => valid.number(value).isPotentiallyValid) // return true false based on validation
         .required('*'),
     card_exp_year: Yup.number()
         .required('*'),

@@ -1,11 +1,9 @@
 import { ItemCounter } from "../ItemCounter/ItemCounter";
 import {Link} from "react-router-dom";
-import { AddToCart } from "../AddToCart/AddToCart";
 import styles from "./CartDetail.module.css";
 export const CartDetail = (props) => {
-    const { name, description, price, img, category,id,counterOn} = props
-    let linkTo = `/Item/${id}`
-    const size = styles.addButton
+    const { name, description, price, img ,id,counterOn} = props
+    let linkTo = `/Item/${id}`;
     
     return (
         <div className={styles.productCard}>

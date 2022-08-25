@@ -5,7 +5,7 @@ import { useParams,Link } from 'react-router-dom'
 import styles from "./ProductList.module.css"
 
 export const ProductList = ({counterOn}) => { 
-    const [items, increase, decrease,state, itemsInCart, setItemsInCart] = useContext(GlobalContext)
+    const [items] = useContext(GlobalContext)
     let {category} = useParams();
     let categoryTitle = category.charAt(0).toUpperCase() + category.slice(1);
     const filtered = items.filter(item => item.category === category)

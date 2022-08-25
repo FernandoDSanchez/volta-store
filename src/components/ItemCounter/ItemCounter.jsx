@@ -6,7 +6,7 @@ import { FaMinus } from "react-icons/fa"
 
 export const ItemCounter = (props) => {
     const {id, price, counterOn} = props
-    const [items, increase, decrease,state, itemsInCart, setItemsInCart,sumTotal] = useContext(GlobalContext)
+    const [, increase, decrease,state, , ,] = useContext(GlobalContext)
     const {cart} = state
     const [qtyPrint, setQtyPrint] = useState(0) 
     const [total, setTotal] = useState(0)

@@ -31,7 +31,7 @@
     color: #282741;
 }
 .listCategory li:hover {
-    transform: translate(40px);
+    opacity: 0.5;
 }
 .listCategory {
     border-right:  solid 1px hsl(245, 25%, 20%, .1) ;

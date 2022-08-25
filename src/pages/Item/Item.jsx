@@ -5,7 +5,7 @@ import { GlobalContext } from "../../App"
 import { NavBar } from "../../components/NavBar/NavBar"
 export const Item = () => {
     const {itemId} = useParams()
-    const [items, increase, decrease,state, itemsInCart, setItemsInCart] = useContext(GlobalContext);
+    const [items] = useContext(GlobalContext);
     const itemDetailed = items.filter(item => item._id === itemId);
     let navStyle = true;
     let counterOn = false;
