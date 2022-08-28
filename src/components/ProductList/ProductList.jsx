@@ -10,35 +10,35 @@ export const ProductList = ({counterOn}) => {
     let categoryTitle = category.charAt(0).toUpperCase() + category.slice(1);
     const filtered = items.filter(item => item.category === category)
             return (
-                    <div className={styles.categoryContainer}>
+                    <div className={"w-full max-w-screen-xl"}>
                         <div className={styles.categoryTitle}>
                             <h1>{categoryTitle}</h1>
                         </div>
-                        <div className={styles.listContainer}>
-                            <div className={styles.listCategory}>
-                                <Link to="/Category/baterias">
-                                <li className={styles.listHover}>Baterias</li>
-                                </Link>
-                                <Link to="/Category/kits">
-                                <li className={styles.listHover}>Kits</li>
-                                </Link>
-                                <Link to="/Category/paneles">
-                                <li className={styles.listHover}>Paneles</li>
-                                </Link>
-                                <Link to="/Category/controladores">
-                                <li className={styles.listHover}>Controladores</li>
-                                </Link>
-                                <Link to="/Category/inversores">
-                                <li className={styles.listHover}>Inversores</li>
-                                </Link>
-                                <Link to="/Category/accesorios">
-                                <li className={styles.listHover}>Accesorios</li>
-                                </Link>
-                                <Link to="/Category/luminarias">
-                                <li className={styles.listHover}>Luminarias</li>
-                                </Link>
+                            <div className={"px-1 py-1 flex md:flex-row flex-col"}>
+                                <div className={"pl-2 py-1 flex flex-wrap md:flex-nowrap md:flex-col"}>
+                                    <Link to="/Category/baterias" >
+                                    <li className={"text-4xl hover:opacity-60 py-10 pr-5"}>Baterias </li>
+                                    </Link>
+                                    <Link to="/Category/kits" className={"text-xl"}>
+                                    <li className={"text-4xl hover:opacity-60 py-10 pr-5"} >Kits </li>
+                                    </Link>
+                                    <Link to="/Category/paneles" className={"text-xl"}>
+                                    <li className={"text-4xl hover:opacity-60 py-10 pr-5"}>Paneles </li>
+                                    </Link>
+                                    <Link to="/Category/controladores" className={"text-xl"}>
+                                    <li className={"text-4xl hover:opacity-60 py-10 pr-5"}>Controladores </li>
+                                    </Link>
+                                    <Link to="/Category/inversores" className={"text-xl"}>
+                                    <li className={"text-4xl hover:opacity-60 py-10 pr-5"}>Inversores </li>
+                                    </Link>
+                                    <Link to="/Category/accesorios" className={"text-xl"}>
+                                    <li className={"text-4xl hover:opacity-60 py-10 pr-5"}>Accesorios </li>
+                                    </Link>
+                                    <Link to="/Category/luminarias" className={"text-xl"}>
+                                    <li className={"text-4xl hover:opacity-60 py-10 pr-5"}>Luminarias </li>
+                                    </Link>
                             </div>
-                            <div className={styles.productsContainer}>
+                            <div className={"py-10 px-20"}>
                                 <div className={styles.products}>
                                     {filtered.map(({_id, name, description,price, image, category }) =>
                                     <ProductDetail name={name} id={_id} description={description}
@@ -46,7 +46,8 @@ export const ProductList = ({counterOn}) => {
                                     )}
                                 </div>
                             </div>
-                        </div>
+                        </div> 
+                        
                     </div>
                 )
 }

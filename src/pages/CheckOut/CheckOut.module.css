@@ -1,25 +1,25 @@
 .CheckOut {
-    background-color: #282741;
+    height: 100%;
+    width: 100%;
 }
 .checkContainer {
     display: flex;
     flex-direction: row;
-    max-width: 70%;
     color: #282741;
-    
+    width: 100%;
+    height: auto;
 }
 .checkContainer h1 {
     font-size: 2.4rem;
-    color: #FFF7EB;
+    color: #282741;
     padding-left: 2em;
 }
 .form{
     top: 0;
     right: 0;
     background-color: #FFF7EB;
-    width: 30%;
+    width: 100%;
     height: 100%;
-    z-index: 300;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,7 +27,6 @@
 
 @media (max-width: 768px) { 
     .form {
-        position: relative;
         width: 100%;
         height: 100%;
     }

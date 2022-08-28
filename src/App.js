@@ -42,7 +42,7 @@ export function App()  {
                 <GlobalContext.Provider value={[items, increase, decrease,state, itemsInCart, setItemsInCart,sumTotal]}>
                     <Routes>
                         <Route path="/" element={<Home/>}/>
-                        <Route path="/CheckOut" element={<CheckOut/>}/>
+                        <Route path="/CheckOut" element={<CheckOut cartEmpty={sumTotal} />}/>
                         <Route path="/Category/:category"  element={<Category/>}/>
                         <Route path="/Item/:itemId" element={<Item/>}/>
                     </Routes>

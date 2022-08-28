@@ -10,14 +10,13 @@ export const Item = () => {
     let navStyle = true;
     let counterOn = false;
     return (
-        <div>
-            <div>
+        <>
                 <NavBar navStyle={navStyle}/>
                 {itemDetailed.map(({_id, name, description,price, image, category }) =>
                             <ItemAlone name={name} id={_id} description={description}
                             price={price} category={category}img={image} key={_id}  counterOn={counterOn}/>
                             )}
-            </div>
-        </div>
+            
+        </>
     )
 }

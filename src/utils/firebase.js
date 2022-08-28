@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, doc, setDoc } from 'firebase/firestore/lite';
+import { getFirestore, collection, getDocs, doc, setDoc, getDoc } from 'firebase/firestore/lite';
 import "firebase/firestore"
 import { getFunctions, httpsCallable } from "firebase/functions";
 
@@ -30,26 +30,32 @@ export class firebaseMethods {
       this.db = getFirestore(this.app);
       this.functions = getFunctions(this.app);
   }
+  getItemByID= async(id) => {
+    const productCol = collection(this.db, 'products');
+    const ref = doc(productCol, id)
+    const productSnapshot = await getDoc(ref);
+    return productSnapshot.data();
+  }
   getProducts = async () => {
     const productCol = collection(this.db, 'products');
     const productSnapshot = await getDocs(productCol);
     const productList = productSnapshot.docs.map(doc => doc.data());
     return productList;}
 
-  addOrder = async (order) => {
-    const newProductRef = doc(collection(this.db, "orders"));
-    const product = {...order, _id: newProductRef.id};
+  addOrder = async (order, paymentDetails) => {
+    const arrayCart = order.map(cart => cart[0])
+    console.log(arrayCart);
+    const newProductRef = doc(collection(this.db, "arrayCart"));
+    const product = {arrayCart, _id: newProductRef.id, customer: paymentDetails.data};
     await setDoc(newProductRef, product)
     .then((res) => {
       console.log("Document successfully written!");
-      console.log(res);
     })}
 
   createToken = async (data) => {
     const createToken= httpsCallable(this.functions, 'createToken');
     return await createToken(data)
     .then((result) => {
-      console.log(result);
       return result;
     });
   }
@@ -58,16 +64,23 @@ export class firebaseMethods {
     const createCustomer = httpsCallable(this.functions, 'createCustomer');
     return await createCustomer(data)
     .then((result) => {
-      console.log(result);
       return result;
     });
   }
 
   createCharge = async (data) => {
   const createCharge= httpsCallable(this.functions, 'createCharge');
-  await createCharge(data)
+  return await createCharge(data)
   .then((result) => {
     console.log(result);
     return result;
   });}
+
+  getTypeDocuments = async () => {
+    const get= httpsCallable(this.functions, 'getTypeDocuments');
+    return await get()
+    .then((result) => {
+      console.log(result);
+      return result;
+    });}
 }

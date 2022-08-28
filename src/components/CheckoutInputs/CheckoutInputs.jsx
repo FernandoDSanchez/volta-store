@@ -10,10 +10,9 @@ export const CheckoutInputs = ({isBilling, setIsBilling}) => {
     const [cardToken, setCardToken] = useState(null);
 
     return (
-        <div>
-            {isCC ? <CCInputs setIsCC={setIsCC} setIsUser={setIsUser} cardToken={cardToken} setCardToken={setCardToken}/> : null}
+        <div className="h-full ">
+            {isCC ? <CCInputs setIsCC={setIsCC} setIsUser={setIsUser} cardToken={cardToken} setCardToken={setCardToken} /> : null}
             {isUser ? <UserInputs setIsUser={setIsUser} cardToken={cardToken} setIsBilling={setIsBilling}/> : null}
-            
         </div>
     )
 

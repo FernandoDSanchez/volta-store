@@ -13,7 +13,7 @@ export const UserSchema = Yup.object().shape({
     last_name: Yup.string()
         .required('*'),
     email: Yup.string()
-    .email('Invalid email').required('*'),
+    .email('Email invalido').required('*'),
     cell_phone: Yup.string()
     .phone("CO").required('*'),
     city: Yup.string()
@@ -26,14 +26,19 @@ export const UserSchema = Yup.object().shape({
 
 export const CCSchema = Yup.object().shape({
     card_number: Yup.string()
+        .trim('No puede contener espacios')
         .test('test-number', // this is used internally by yup
-        'Credit Card number is invalid', //validation message
+        '* El numero de tarjeta es invalido', //validation message
         value => valid.number(value).isPotentiallyValid) // return true false based on validation
         .required('*'),
-    card_exp_year: Yup.number()
+    card_exp: Yup.string()
+        .test('test-number', // this is used internally by yup
+        '* Fecha invalida', //validation message
+        value => valid.expirationDate(value).isPotentiallyValid)
         .required('*'),
-    card_exp_month: Yup.number()
-        .required('*'),
-    card_cvc: Yup.number()
+    card_cvc: Yup.string().max(4)
+        .test( // this is used internally by yup
+        '* CVV invalido', //validation message
+        value => valid.cvv(value,4).isPotentiallyValid)
         .required('*'),
 });

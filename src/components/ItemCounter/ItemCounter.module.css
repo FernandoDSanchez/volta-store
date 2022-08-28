@@ -14,11 +14,11 @@
 .counterContainer button {
     width: 24px;
     height: 24px;
-    background-color: #FFF7EB;
+    background-color: #282741;
     border-style: none;
 }
 .counterContainer p {
-    color: #FFF7EB;
+    color: #282741;
 }
 .totalCounter {
     display: flex;

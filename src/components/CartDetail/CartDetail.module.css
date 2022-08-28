@@ -29,7 +29,7 @@
 }
 .productCard h1 {
     font-size: 2.4rem;
-    color: #FFF7EB;
+    color: #282741;
 }
 
 .productCard p {
@@ -39,7 +39,7 @@
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    color: #FFF7EB;
+    color: #282741;
 }
 
 .productInfo {

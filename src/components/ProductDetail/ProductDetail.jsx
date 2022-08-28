@@ -8,18 +8,18 @@ export const ProductDetail = (props) => {
     const size = styles.addButton
     
     return (
-        <div className={styles.productCard}>
+        <div className={"flex flex-row py-5 px-5 w-full drop-shadow-2xl bg-slate-50 mb-20"}>
                 <div className={styles.imgProduct}>
                     <Link to={linkTo}><img src={img} alt="" width="100" height="100"/></Link>
                 </div>
-                <div className={styles.productInfo}>
-                    <Link to={linkTo}><h1>{name}</h1></Link>
-                    <h3>{category}</h3>
-                    <h1>${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h1>
-                    <Link to={linkTo}><p>{description}</p></Link>
+                <div className={"flex flex-col items-stretch pl-5 w-full"}>
                     <ItemCounter id={id} price={price} counterOn={counterOn}/>
+                    <h1 className={"text-4xl"}>${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h1>
+                    <Link to={linkTo}><h1 className={"text-4xl py-1"}>{name}</h1></Link>
+                    <Link to={linkTo}><p  className={"text-xl line-clamp-3"}>{description}</p></Link>
                     <AddToCart id={id} size={size}/>
                 </div>
+                
         </div>
     )
 }

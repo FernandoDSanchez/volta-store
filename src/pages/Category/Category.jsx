@@ -6,7 +6,9 @@ export const Category= () => {
     return (
         <>
             <NavBar navStyle={navStyle}/>
-            <ProductList counterOn={counterOn}/>
+            <main className="w-full flex justify-center">
+                <ProductList counterOn={counterOn}/>
+            </main>
         </>
     )
 }

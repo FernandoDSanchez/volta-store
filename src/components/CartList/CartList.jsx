@@ -21,7 +21,7 @@ export const CartList = ({counterOn}) => {
                             price={price} category={category}img={image} key={_id} counterOn={counterOn}/>
                             ))}
                         </div>
-                        <div className={styles.totalSum}><h1>Suma Total: ${sumTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h1></div>
+                        <div className={styles.totalSum}><h1 className={"text-7xl py-10"}>Suma Total: ${sumTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h1></div>
                     </div>
                 )
 }
